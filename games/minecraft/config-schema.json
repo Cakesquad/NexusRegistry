@@ -75,7 +75,7 @@
                     "label": "Server Version",
                     "type": "select",
                     "dynamicOptions": {
-                        "script": "minecraftVersions",
+                        "script": "versions.lua",
                         "arguments": {
                             "releaseTypeField": "releaseType"
                         }
