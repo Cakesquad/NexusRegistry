@@ -43,12 +43,12 @@
                     "label": "Server Type",
                     "type": "select",
                     "options": [
-                        {"value": "vanilla", "label": "Vanilla"},
-                        {"value": "bedrock", "label": "Bedrock"},
-                        {"value": "spigot", "label": "Spigot"},
-                        {"value": "paper", "label": "Paper"},
-                        {"value": "neoforge", "label": "NeoForge"},
-                        {"value": "fabric", "label": "Fabric"}
+                        { "value": "vanilla", "label": "Vanilla" },
+                        { "value": "bedrock", "label": "Bedrock" },
+                        { "value": "spigot", "label": "Spigot" },
+                        { "value": "paper", "label": "Paper" },
+                        { "value": "neoforge", "label": "NeoForge" },
+                        { "value": "fabric", "label": "Fabric" }
                     ],
                     "default": "vanilla",
                     "required": true,
@@ -59,9 +59,8 @@
                     "label": "Release Type",
                     "type": "select",
                     "options": [
-                        {"value": "release", "label": "Release"},
-                        {"value": "snapshot", "label": "Snapshot"},
-                        {"value": "beta", "label": "Beta"}
+                        { "value": "release", "label": "Release" },
+                        { "value": "snapshot", "label": "Snapshot" }
                     ],
                     "default": "release",
                     "required": false,
@@ -74,22 +73,27 @@
                 {
                     "id": "serverVersion",
                     "label": "Server Version",
-                    "type": "text",
-                    "default": "latest",
+                    "type": "select",
+                    "dynamicOptions": {
+                        "script": "minecraftVersions",
+                        "arguments": {
+                            "releaseTypeField": "releaseType"
+                        }
+                    },
                     "required": true,
-                    "description": "Specify the version of the server. Use 'latest' for the most recent version."
+                    "description": "Select the Minecraft version."
                 },
                 {
                     "id": "javaVersion",
                     "label": "Java Version",
                     "type": "select",
                     "options": [
-                        {"value": "java25", "label": "Java 25"},
-                        {"value": "java21", "label": "Java 21"},
-                        {"value": "java17", "label": "Java 17"},
-                        {"value": "java16", "label": "Java 16"},
-                        {"value": "java11", "label": "Java 11"},
-                        {"value": "java8", "label": "Java 8"}
+                        { "value": "java25", "label": "Java 25" },
+                        { "value": "java21", "label": "Java 21" },
+                        { "value": "java17", "label": "Java 17" },
+                        { "value": "java16", "label": "Java 16" },
+                        { "value": "java11", "label": "Java 11" },
+                        { "value": "java8", "label": "Java 8" }
                     ],
                     "default": "java25",
                     "required": true,
