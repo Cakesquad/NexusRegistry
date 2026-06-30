@@ -55,6 +55,23 @@
                     "description": "Select the type of Minecraft server you want to run."
                 },
                 {
+                    "id": "releaseType",
+                    "label": "Release Type",
+                    "type": "select",
+                    "options": [
+                        {"value": "release", "label": "Release"},
+                        {"value": "snapshot", "label": "Snapshot"},
+                        {"value": "beta", "label": "Beta"}
+                    ],
+                    "default": "release",
+                    "required": false,
+                    "description": "Select the release type for the server.",
+                    "visibleWhen": {
+                        "field": "serverType",
+                        "value": "vanilla"
+                    }
+                },
+                {
                     "id": "serverVersion",
                     "label": "Server Version",
                     "type": "text",
@@ -77,23 +94,6 @@
                     "default": "java25",
                     "required": true,
                     "description": "Select the Java version to run the server."
-                },
-                {
-                    "id": "releaseType",
-                    "label": "Release Type",
-                    "type": "select",
-                    "options": [
-                        {"value": "release", "label": "Release"},
-                        {"value": "snapshot", "label": "Snapshot"},
-                        {"value": "beta", "label": "Beta"}
-                    ],
-                    "default": "release",
-                    "required": false,
-                    "description": "Select the release type for the server.",
-                    "visibleWhen": {
-                        "field": "serverType",
-                        "value": "vanilla"
-                    }
                 },
                 {
                     "id": "neoForgeVersion",
