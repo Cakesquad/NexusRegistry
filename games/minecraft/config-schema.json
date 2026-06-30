@@ -79,6 +79,23 @@
                     "description": "Select the Java version to run the server."
                 },
                 {
+                    "id": "releaseType",
+                    "label": "Release Type",
+                    "type": "select",
+                    "options": [
+                        {"value": "release", "label": "Release"},
+                        {"value": "snapshot", "label": "Snapshot"},
+                        {"value": "beta", "label": "Beta"}
+                    ],
+                    "default": "release",
+                    "required": false,
+                    "description": "Select the release type for the server.",
+                    "visibleWhen": {
+                        "field": "serverType",
+                        "value": "vanilla"
+                    }
+                },
+                {
                     "id": "neoForgeVersion",
                     "label": "NeoForge Version",
                     "type": "text",
