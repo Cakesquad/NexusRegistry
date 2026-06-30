@@ -3,5 +3,6 @@
     "name": "Minecraft",
     "assets": {
         "cover": "cover.jpg"
-    }
+    },
+	"configSchema": "config-schema.json"
 }
