@@ -1,0 +1,64 @@
+{
+    "schemaVersion": 1,
+    "metadata": {
+        "name": "Satisfactory Server Config",
+        "description": "For Satisfactory server.",
+        "defaultPorts": [
+            {
+                "name": "game",
+                "port": 7777,
+                "protocols": ["tcp", "udp"]
+            },
+            {
+                "name": "reliable",
+                "port": 8888,
+                "protocols": ["udp"]
+            }
+        ]
+    },
+    "groups": [
+        {
+            "id": "general",
+            "label": "General",
+            "fields": [
+                {
+                    "id": "serverName",
+                    "label": "Server Name",
+                    "type": "text",
+                    "default": "My Satisfactory Server",
+                    "required": true,
+                    "description": "The name of your Satisfactory server."
+                }
+            ]
+        },
+        {
+            "id": "version",
+            "label": "Version",
+            "fields": [
+                {
+                    "id": "branch",
+                    "label": "Server branch",
+                    "type": "select",
+                    "options": [
+                        {"value": "public", "label": "Public"},
+                        {"value": "experimental", "label": "Experimental"}
+                    ],
+                    "default": "public",
+                    "required": true,
+                    "description": "Select the branch of Satisfactory server you want to run."
+                }
+            ]
+        },
+        {
+            "id": "network",
+            "label": "Network",
+            "fields": [
+                {
+                    "id": "ports",
+                    "predefined": true,
+                    "type": "ports"
+                }
+            ]
+        }
+    ]
+}

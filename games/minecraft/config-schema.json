@@ -22,7 +22,7 @@
                     "type": "text",
                     "default": "My Minecraft Server",
                     "required": true,
-                    "description": "The name that appears in the server's MOTD."
+                    "description": "The name of your Minecraft server."
                 },
                 {
                     "id": "motd",

@@ -3,5 +3,6 @@
     "name": "Satisfactory",
     "assets": {
         "cover": "cover.jpg"
-    }
+    },
+	"configSchema": "config-schema.json"
 }
