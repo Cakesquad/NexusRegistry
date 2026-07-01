@@ -1,7 +1,5 @@
 -- Fetch Minecraft version manifest
-local http = require("http")
-
-local json = http.get("https://launchermeta.mojang.com/mc/game/version_manifest.json")
+local json = http:get("https://launchermeta.mojang.com/mc/game/version_manifest.json")
 local manifest = json:toTable()
 
 local releaseType = args.releaseType  -- "release", "snapshot"
