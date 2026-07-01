@@ -1,15 +1,16 @@
 {
     "schemaVersion": 1,
     "metadata": {
-        "name": "Minecraft Server Config",
-        "description": "For Minecraft server.",
+        "name": "Minecraft (Java) Server Config",
+        "description": "For Minecraft (Java) server.",
         "defaultPorts": [
             {
                 "name": "game",
                 "port": 25565,
                 "protocols": ["tcp", "udp"]
             }
-        ]
+        ],
+        "script": "config.lua"
     },
     "groups": [
         {
@@ -44,9 +45,6 @@
                     "type": "select",
                     "options": [
                         { "value": "vanilla", "label": "Vanilla" },
-                        { "value": "bedrock", "label": "Bedrock" },
-                        { "value": "spigot", "label": "Spigot" },
-                        { "value": "paper", "label": "Paper" },
                         { "value": "neoforge", "label": "NeoForge" },
                         { "value": "fabric", "label": "Fabric" }
                     ],
@@ -75,13 +73,26 @@
                     "label": "Server Version",
                     "type": "select",
                     "dynamicOptions": {
-                        "script": "versions.lua",
-                        "arguments": {
-                            "releaseTypeField": "releaseType"
-                        }
+                        "script": "config.lua",
+                        "function": "getVersions"
                     },
                     "required": true,
                     "description": "Select the Minecraft version."
+                },
+                {
+                    "id": "neoForgeVersion",
+                    "label": "NeoForge Version",
+                    "type": "select",
+                    "dynamicOptions": {
+                        "script": "config.lua",
+                        "function": "getNeoForgeVersions"
+                    },
+                    "required": false,
+                    "description": "Specify the version of NeoForge to use.",
+                    "visibleWhen": {
+                        "field": "serverType",
+                        "value": "neoforge"
+                    }
                 },
                 {
                     "id": "javaVersion",
@@ -98,18 +109,6 @@
                     "default": "java25",
                     "required": true,
                     "description": "Select the Java version to run the server."
-                },
-                {
-                    "id": "neoForgeVersion",
-                    "label": "NeoForge Version",
-                    "type": "text",
-                    "default": "latest",
-                    "required": false,
-                    "description": "Specify the version of NeoForge to use.",
-                    "visibleWhen": {
-                        "field": "serverType",
-                        "value": "neoforge"
-                    }
                 }
             ]
         },

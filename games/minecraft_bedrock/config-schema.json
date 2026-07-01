@@ -1,0 +1,41 @@
+{
+    "schemaVersion": 1,
+    "metadata": {
+        "name": "Minecraft (Bedrock) Server Config",
+        "description": "For Minecraft (Bedrock) server.",
+        "defaultPorts": [
+            {
+                "name": "game",
+                "port": 25565,
+                "protocols": ["tcp", "udp"]
+            }
+        ]
+    },
+    "groups": [
+        {
+            "id": "general",
+            "label": "General",
+            "fields": [
+                {
+                    "id": "serverName",
+                    "label": "Server Name",
+                    "type": "text",
+                    "default": "My Minecraft Server",
+                    "required": true,
+                    "description": "The name of your Minecraft server."
+                }
+            ]
+        },
+        {
+            "id": "network",
+            "label": "Network",
+            "fields": [
+                {
+                    "id": "ports",
+                    "predefined": true,
+                    "type": "ports"
+                }
+            ]
+        }
+    ]
+}

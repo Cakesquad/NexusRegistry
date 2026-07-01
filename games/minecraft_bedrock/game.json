@@ -1,6 +1,6 @@
 {
-    "id": "minecraft",
-    "name": "Minecraft (Java)",
+    "id": "minecraft_bedrock",
+    "name": "Minecraft (Bedrock)",
     "assets": {
         "cover": "cover.jpg"
     },
