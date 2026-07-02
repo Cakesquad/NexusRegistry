@@ -1,0 +1,8 @@
+{
+    "id": "ark_survival_evolved",
+    "name": "Ark: Survival Evolved",
+    "assets": {
+        "cover": "cover.jpg"
+    },
+	"configSchema": "config-schema.json"
+}

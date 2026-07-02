@@ -1,0 +1,41 @@
+{
+    "schemaVersion": 1,
+    "metadata": {
+        "name": "Ark: Survival Evolved Server Config",
+        "description": "For Ark: Survival Evolved server.",
+        "defaultPorts": [
+            {
+                "name": "game",
+                "port": 27015,
+                "protocols": ["tcp", "udp"]
+            }
+        ]
+    },
+    "groups": [
+        {
+            "id": "general",
+            "label": "General",
+            "fields": [
+                {
+                    "id": "serverName",
+                    "label": "Server Name",
+                    "type": "text",
+                    "default": "My Ark Server",
+                    "required": true,
+                    "description": "The name of your Ark: Survival Evolved server."
+                }
+            ]
+        },
+        {
+            "id": "network",
+            "label": "Network",
+            "fields": [
+                {
+                    "id": "ports",
+                    "predefined": true,
+                    "type": "ports"
+                }
+            ]
+        }
+    ]
+}
